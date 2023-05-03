@@ -7,6 +7,8 @@ import heroImg from '../assets/images/hero-img01.jpg';
 import heroImg2 from '../assets/images/hero-img02.jpg';
 import heroVideo from '../assets/images/hero-video.mp4';
 import Subtitle from '../shared/subtitle'
+import SearchBar from '../shared/SearchBar';
+import ServicesList from '../Services/ServicesList';
 
 const Home = () => {
   return <>
@@ -39,10 +41,23 @@ const Home = () => {
               <img src={heroImg2} alt="" />
             </div>
           </Col>
+          <SearchBar />
         </Row>
       </Container>
     </section>
     {/* hero section end */}
+    {/* Service section */}
+    <section>
+      <Container>
+        <Row>
+          <Col lg="3">
+            <h5 className='services__subtitle'>What we serve</h5>
+            <h2 className='services__title'>We offer our best service</h2>
+          </Col>
+          <ServicesList />
+        </Row>
+      </Container>
+    </section>
   </>
 }
 
