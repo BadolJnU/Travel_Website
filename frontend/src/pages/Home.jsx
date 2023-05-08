@@ -11,6 +11,7 @@ import Subtitle from '../shared/subtitle'
 import SearchBar from '../shared/SearchBar';
 import ServicesList from '../Services/ServicesList';
 import FeaturedTourList from '../components/Featured_Tours/FeaturedTourList';
+import MasonoryImageGallery from '../components/Image-Gallery/MasonoryImageGallery';
 
 const Home = () => {
   return <>
@@ -108,6 +109,21 @@ const Home = () => {
       </Container>
     </section>
     {/* Experience section End */}
+    {/* Gallery section Start */}
+    <section>
+      <Container>
+        <Row>
+          <Col lg="12">
+            <Subtitle subtitle={"Gallery"}></Subtitle>
+            <h2 className='gallery__title'>Visit our customers tour Gallery</h2>
+          </Col>
+          <Col lg="12">
+            <MasonoryImageGallery />
+          </Col>
+        </Row>
+      </Container>
+    </section>
+    {/* Gallery section End */}
   </>
 }
 

@@ -97,3 +97,19 @@
 .experience__img img {
     width: 90%;
 }
+
+
+.gallery__title {
+    font-size: 2.1rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1rem;
+}
+
+
+.masnory__Img {
+    transition: .3s;
+}
+
+.masnory__Img:hover {
+    transform: scale(1.1);
+}
