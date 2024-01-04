@@ -10,6 +10,7 @@ import calculateRating from './../Utils/CalculateRating'
 import avater from '../assets/images/avatar.jpg'
 
 import Booking from '../components/Booking/Booking'
+import Newsletter from '../shared/Newsletter'
 
 const TourDetails = () => {
 
@@ -39,6 +40,7 @@ const TourDetails = () => {
   }
 
   return (
+    <>
     <section>
       <Container>
         <Row>
@@ -110,6 +112,8 @@ const TourDetails = () => {
         </Row>
       </Container>
     </section>
+    <Newsletter/>
+    </>
   )
 }
 
