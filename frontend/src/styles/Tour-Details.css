@@ -4,7 +4,8 @@
     margin-bottom: 2.5rem;
 }
 
-.tour__info {
+.tour__info, 
+.tour__reviews {
     border-radius: 0.5rem;
     padding: 2rem;
     border: 1px solid rgb(229, 231, 235);
@@ -40,4 +41,43 @@
 .extra__tour-details span i {
     color: var(--secondary-color);
     font-size: 1rem;
+}
+
+.tour__info p {
+    line-height: 30px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.tour__reviews h4 {
+    margin-bottom: 3rem;
+}
+
+.rating__group span {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.review__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    border: 1px solid var(--secondary-color);
+}
+
+.review__input input {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+}
+
+.review__input input:focus {
+    outline: none;
 }

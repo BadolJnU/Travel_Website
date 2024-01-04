@@ -43,6 +43,23 @@ const TourDetails = () => {
                 <h2>Description</h2>
                 <p>{desc}</p>
               </div>
+              {/* Tour Reviews Section */}
+              <div className="tour__reviews mt-4">
+                <h4>Reviews ({reviews?.length} reviews)</h4>
+
+                <Form>
+                  <div className='d-flex align-items-center gap-3 rating__group'>
+                    <span>1 <i class="ri-star-s-fill"></i></span>
+                    <span>2 <i class="ri-star-s-fill"></i></span>
+                    <span>3 <i class="ri-star-s-fill"></i></span>
+                    <span>4 <i class="ri-star-s-fill"></i></span>
+                  </div>
+                  <div className="review__input">
+                    <input type="text" placeholder='Share your Thoughts....'/>
+                    <button type='submit' className='btn primary__btn text-white'>Submit</button>
+                  </div>
+                </Form>
+              </div>
             </div>
           </Col>
         </Row>
