@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './TourCard.css';
-import calculateRating from '../Utils/CalculateRating';
+import calculateRating from './../Utils/CalculateRating';
 
 const TourCard = ({tour}) => {
 

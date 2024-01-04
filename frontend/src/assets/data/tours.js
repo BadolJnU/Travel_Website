@@ -11,6 +11,7 @@ const tours = [
     id: "01",
     title: "Westminister Bridge",
     city: "London",
+    address: "Somewhere in London",
     distance: 300,
     price: 99,
     maxGroupSize: 10,
@@ -33,6 +34,7 @@ const tours = [
     id: "02",
     title: "Bali, Indonesia",
     city: "Indonesia",
+    address: "Somewhere in Indonesia",
     distance: 400,
     price: 99,
     maxGroupSize: 8,
@@ -54,6 +56,7 @@ const tours = [
   {
     id: "03",
     title: "Snowy Mountains, Thailand",
+    address: "Somewhere in Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
@@ -72,6 +75,7 @@ const tours = [
   {
     id: "04",
     title: "Beautiful Sunrise, Thailand",
+    address: "Somewhere in Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
@@ -90,6 +94,7 @@ const tours = [
   {
     id: "05",
     title: "Nusa Pendia Bali, Indonesia",
+    address: "Somewhere in Indonesia",
     city: "Indonesia",
     distance: 500,
     price: 99,
@@ -105,6 +110,7 @@ const tours = [
   {
     id: "06",
     title: "Cherry Blossoms Spring",
+    address: "Somewhere in Japan",
     city: "Japan",
     distance: 500,
     price: 99,
@@ -123,6 +129,7 @@ const tours = [
   {
     id: "07",
     title: "Holmen Lofoten",
+    address: "Somewhere in France",
     city: "France",
     distance: 500,
     price: 99,
@@ -141,6 +148,7 @@ const tours = [
   {
     id: "08",
     title: "Snowy Mountains, Thailand",
+    address: "Somewhere in Thailand",
     city: "Thailand",
     distance: 500,
     price: 99,
