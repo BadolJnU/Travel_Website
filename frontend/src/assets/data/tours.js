@@ -13,7 +13,7 @@ const tours = [
     city: "London",
     address: "Somewhere in London",
     distance: 300,
-    price: 99,
+    price: 199,
     maxGroupSize: 10,
     desc: "this is the description",
     reviews: [

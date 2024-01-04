@@ -9,6 +9,8 @@ import tourData from '../assets/data/tours';
 import calculateRating from './../Utils/CalculateRating'
 import avater from '../assets/images/avatar.jpg'
 
+import Booking from '../components/Booking/Booking'
+
 const TourDetails = () => {
 
    const { id } = useParams()
@@ -47,7 +49,7 @@ const TourDetails = () => {
                 <h2>{title}</h2>
                 <div className='d-flex align-items-center gap-5'>
                   <span className="tour__location d-flex align-items-center gap-1">
-                  <i class="ri-star-fill" style={{'color':'var(--secondary-color)'}}></i>{calculateRating === 0 ? null : avgRating}
+                  <i class="ri-star-fill" style={{'color':'var(--secondary-color)'}}></i>{avgRating === 0 ? null : avgRating}
                   {totalRating === 0 ? ("Not related") : (<span>({reviews?.length})</span>)}
                   </span>
                   <span><i class="ri-map-pin-fill"></i>{address}</span>
@@ -101,6 +103,9 @@ const TourDetails = () => {
                 </ListGroup>
               </div>
             </div>
+          </Col>
+          <Col lg='4'>
+            <Booking tour={tour} avgRating={avgRating}/>
           </Col>
         </Row>
       </Container>
