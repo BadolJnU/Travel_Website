@@ -7,6 +7,7 @@ import tourRoute from "../backend/Routes/TourRoutes.js"
 import userRoute from "../backend/Routes/userRoutes.js"
 import authRoute from "../backend/Routes/authRoutes.js"
 import reviewRoute from "../backend/Routes/reviews.js"
+import bookingRoute from "../backend/Routes/bookingRoutes.js"
 
 
 dotenv.config()
@@ -44,6 +45,7 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/tours", tourRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/reviews", reviewRoute);
+app.use("/api/v1/booking", bookingRoute);
 
 
 
