@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useRef} from 'react'
 import {Container, Row, Button } from 'reactstrap';
 import {NavLink, Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
@@ -25,6 +25,7 @@ const nav_Link = [
 const Header = () => {
 
   const navigate = useNavigate()
+  const menuRef = useRef(null)
   const {user, dispatch} = useContext(AuthContext)
 
   const logout = () => {
@@ -32,6 +33,9 @@ const Header = () => {
     navigate('/')
   }
 
+  const toggleMenu = () => {
+    menuRef.current.classList.toggle('show__menu')
+  }
   return (
     <header className="header">
       <Container>
@@ -43,7 +47,7 @@ const Header = () => {
             </div>
             {/* Logo End */}
             {/* Menu Start */}
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <ul className="menu d-flex align-items-center gap-5">
                 {
                   nav_Link.map((item,index)=>(
@@ -69,7 +73,7 @@ const Header = () => {
                 }
               </div>
 
-              <span className="mobile__menu">
+              <span className="mobile__menu" onClick={toggleMenu}>
                 <i class="ri-menu-4-line"></i>
               </span>
             </div>

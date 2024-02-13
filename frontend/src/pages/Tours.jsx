@@ -54,7 +54,7 @@ const Tours = () => {
           {
             !loading && !error && <Row>
             {
-              tours?.map(tour => <Col lg='3' key={tour._id} className='mb-4'><TourCard tour={tour}></TourCard></Col>)
+              tours?.map(tour => <Col lg='3' key={tour._id} className='mb-4' mb='6' sm='6'><TourCard tour={tour}></TourCard></Col>)
             }
             <Col lg='12'>
               <div className="pagination d-flex align-items-center justify-content-center mt-4 gap-3">
