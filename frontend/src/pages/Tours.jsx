@@ -2,24 +2,35 @@ import React, {useState, useEffect} from 'react';
 import CommonSection from '../shared/CommonSection';
 import { Container, Row, Col } from 'reactstrap'
 
-import TourData from '../assets/data/tours'
+//import TourData from '../assets/data/tours'
 import TourCard from '../shared/TourCard'
 import SearchBar from '../shared/SearchBar'
 import Newsletter from '../shared/Newsletter'
 
 import "../styles/Tour.css";
 
+import useFetch from './../hooks/useFetch'
+import {BASE_URL} from './../Utils/config'
+
+
+
 const Tours = () => {
 
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
 
+  const {data:tours, loading, error } = useFetch(`${BASE_URL}/tours?page=${page}`);
+  const {data:tourCount} = useFetch(`${BASE_URL}/tours/search/getTourCount`);
+
   useEffect(() => {
 
-    const pages = Math.ceil(5/ 4); //later we will use backend data
+    const pages = Math.ceil(tourCount / 8); 
     setPageCount(pages)
+    window.scroll(0,0)
 
-  }, [page]);
+  }, [page, tourCount, tours]);
+
+  console.log(pageCount)
 
 
   return (
@@ -34,9 +45,16 @@ const Tours = () => {
       </section>
       <section className='pt-0'>
         <Container>
-          <Row>
+          {
+            loading && <h4 className='text-center pt-5'>Loading .......</h4>
+          }
+          {
+            error && <h4 className='text-center pt-5'>{error}</h4>
+          }
+          {
+            !loading && !error && <Row>
             {
-              TourData?.map(tour => <Col lg='3' key={tour.id} className='mb-4'><TourCard tour={tour}></TourCard></Col>)
+              tours?.map(tour => <Col lg='3' key={tour._id} className='mb-4'><TourCard tour={tour}></TourCard></Col>)
             }
             <Col lg='12'>
               <div className="pagination d-flex align-items-center justify-content-center mt-4 gap-3">
@@ -52,6 +70,7 @@ const Tours = () => {
               </div>
             </Col>
           </Row>
+          }
         </Container>
         <Newsletter/>
       </section>
