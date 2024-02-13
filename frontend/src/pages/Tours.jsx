@@ -26,7 +26,7 @@ const Tours = () => {
 
     const pages = Math.ceil(tourCount / 8); 
     setPageCount(pages)
-    window.scroll(0,0)
+    window.scrollTo(0,0)
 
   }, [page, tourCount, tours]);
 

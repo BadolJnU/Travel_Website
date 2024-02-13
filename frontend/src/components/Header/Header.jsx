@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Container, Row, Button } from 'reactstrap';
-import {NavLink, Link } from 'react-router-dom';
+import {NavLink, Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/images/logo.png'
 import './Header.css'
+import { AuthContext } from '../../context/AuthContext';
 
 const nav_Link = [
   {
@@ -22,6 +23,14 @@ const nav_Link = [
 
 
 const Header = () => {
+
+  const navigate = useNavigate()
+  const {user, dispatch} = useContext(AuthContext)
+
+  const logout = () => {
+    dispatch({type: 'LOGOUT'})
+    navigate('/')
+  }
 
   return (
     <header className="header">
@@ -48,8 +57,16 @@ const Header = () => {
             {/* Menu End */}
             <div className="nav__right d-flex align-items-center gap-4">
               <div className="nav__btns d-flex align-items-center gap4-">
-                <Button className="btn secondary__btn"><Link to='/login'>Login</Link></Button>
-                <Button className="btn primary__btn"><Link to='/register'>Register</Link></Button>
+                {
+                  user? <>
+                    <h5 className='mb-0 px-3'>{user.username}</h5>
+                    <Button className="btn primary__btn" onClick={logout}>Logout</Button>
+                  </> :
+                    <>
+                      <Button className="btn secondary__btn"><Link to='/login'>Login</Link></Button>
+                      <Button className="btn primary__btn"><Link to='/register'>Register</Link></Button>
+                    </>
+                }
               </div>
 
               <span className="mobile__menu">
