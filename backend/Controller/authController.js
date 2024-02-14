@@ -1,14 +1,12 @@
 import User from '../models/User.js';
-import bcrypt from 'bcryptjs';
+//import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 //user registration
 export const register = async (req, res) => {
     try {
-
-
         const newUser = new User({
-            username: req.body.username,
+            username: req.body.userName,
             email: req.body.email,
             password: req.body.password,
             photo: req.body.photo
@@ -20,6 +18,7 @@ export const register = async (req, res) => {
 
     } catch (err) {
         res.status(500).json({success: false, message: "failed to create, try again"})
+        console.log(err)
     }
 }
 
@@ -39,8 +38,9 @@ export const login = async (req, res) => {
 
 
         //if password is incorrect
-        if(req.body.password != user.password){
-            console.log(req.body.password,user.password)
+        if(req.body.password !== user.password){
+            console.log(req.body.password != user.password)
+            console.log(req.body.password, user.password)
             return res.status(401).json({success:false, message: 'email or password is incorrect. Check and try again'})
         }
 
